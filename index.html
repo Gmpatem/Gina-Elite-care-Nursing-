@@ -162,7 +162,6 @@
             padding: 1rem 1.5rem;
             border-radius: var(--radius);
             margin-bottom: 1.5rem;
-            display: none;
         }
 
         .alert-success {
@@ -183,6 +182,10 @@
             border: 1px solid #fde68a;
         }
 
+        .alert-hidden {
+            display: none;
+        }
+
         /* Loading Spinner */
         .spinner {
             display: inline-block;
@@ -196,6 +199,10 @@
 
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+
+        .spinner-hidden {
+            display: none;
         }
 
         /* Header Styles */
@@ -566,9 +573,11 @@
 
         .testimonial-card {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: var(--radius);
+            /* Fixed backdrop-filter for Safari compatibility */
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
         }
 
         .testimonial-text {
@@ -842,6 +851,19 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 <body>
@@ -851,13 +873,13 @@
             <nav class="navbar">
                 <a href="#" class="logo">
                     <div class="logo-icon">
-                        <i class="fas fa-stethoscope"></i>
+                        <i class="fas fa-stethoscope" aria-hidden="true"></i>
                     </div>
-                    <span>Gina Elite Nursing Care </span>
+                    <span>Gina Elite Nursing Care</span>
                 </a>
                 
-                <button class="mobile-toggle" id="mobileToggle">
-                    <i class="fas fa-bars"></i>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
                 
                 <ul class="nav-menu" id="navMenu">
@@ -876,7 +898,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text fade-in">
-                    <h1 class="hero-title">Premium Private Nursing Care in Your Home & Anywhere </h1>
+                    <h1 class="hero-title">Premium Private Nursing Care in Your Home & Anywhere</h1>
                     <p class="hero-subtitle">Experience compassionate, professional healthcare tailored to your needs. Our licensed nurses provide expert medical care with dignity and respect in the comfort of your home.</p>
                     <div class="hero-buttons">
                         <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
@@ -887,7 +909,7 @@
                 <!-- Owner Profile Card -->
                 <div class="owner-card fade-in">
                     <div class="owner-image">
-                        <i class="fas fa-user-nurse"></i>
+                        <i class="fas fa-user-nurse" aria-hidden="true"></i>
                     </div>
                     <div class="owner-info">
                         <h3 class="owner-name">Geraldine Mulango Bao, HND, BSN</h3>
@@ -910,14 +932,14 @@
                         </div>
                         
                         <div class="owner-contact">
-                            <a href="tel:+237653584827" class="contact-btn">
-                                <i class="fas fa-phone"></i>
+                            <a href="tel:+237653584827" class="contact-btn" aria-label="Call us">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
                             </a>
-                            <a href="mailto:ginacare47@gmail.com" class="contact-btn">
-                                <i class="fas fa-envelope"></i>
+                            <a href="mailto:ginacare47@gmail.com" class="contact-btn" aria-label="Email us">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
                             </a>
-                            <a href="#" class="contact-btn">
-                                <i class="fab fa-linkedin-in"></i>
+                            <a href="#" class="contact-btn" aria-label="Visit our LinkedIn">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -937,7 +959,7 @@
             <div class="features-grid">
                 <div class="feature-card card fade-in">
                     <div class="feature-icon">
-                        <i class="fas fa-user-md"></i>
+                        <i class="fas fa-user-md" aria-hidden="true"></i>
                     </div>
                     <h3 class="feature-title">Expert Medical Professionals</h3>
                     <p class="feature-text">Our team consists of highly qualified nurses with specialized training and years of clinical experience.</p>
@@ -945,7 +967,7 @@
                 
                 <div class="feature-card card fade-in">
                     <div class="feature-icon">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-home" aria-hidden="true"></i>
                     </div>
                     <h3 class="feature-title">Care in Your Home</h3>
                     <p class="feature-text">Receive hospital-quality care in the comfort and familiarity of your own home environment.</p>
@@ -953,7 +975,7 @@
                 
                 <div class="feature-card card fade-in">
                     <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-clock" aria-hidden="true"></i>
                     </div>
                     <h3 class="feature-title">Flexible Scheduling</h3>
                     <p class="feature-text">We work around your schedule with services available 24/7 for your convenience and peace of mind.</p>
@@ -973,7 +995,7 @@
             <div class="services-grid">
                 <div class="service-card card fade-in">
                     <div class="service-icon">
-                        <i class="fas fa-tint"></i>
+                        <i class="fas fa-tint" aria-hidden="true"></i>
                     </div>
                     <h3 class="service-title">IV Therapy</h3>
                     <p class="service-description">Professional administration of IV medications, fluids, and vitamins in the comfort of your home.</p>
@@ -985,7 +1007,7 @@
                 
                 <div class="service-card card fade-in">
                     <div class="service-icon">
-                        <i class="fas fa-band-aid"></i>
+                        <i class="fas fa-band-aid" aria-hidden="true"></i>
                     </div>
                     <h3 class="service-title">Wound Dressing</h3>
                     <p class="service-description">Expert wound assessment, cleaning, and dressing changes for optimal healing.</p>
@@ -997,7 +1019,7 @@
                 
                 <div class="service-card card fade-in">
                     <div class="service-icon">
-                        <i class="fas fa-heartbeat"></i>
+                        <i class="fas fa-heartbeat" aria-hidden="true"></i>
                     </div>
                     <h3 class="service-title">BP Monitoring</h3>
                     <p class="service-description">Regular blood pressure checks with professional interpretation and health advice.</p>
@@ -1009,7 +1031,7 @@
                 
                 <div class="service-card card fade-in">
                     <div class="service-icon">
-                        <i class="fas fa-user-injured"></i>
+                        <i class="fas fa-user-injured" aria-hidden="true"></i>
                     </div>
                     <h3 class="service-title">Elderly Care</h3>
                     <p class="service-description">Comprehensive care for seniors including medication management and daily living assistance.</p>
@@ -1021,7 +1043,7 @@
                 
                 <div class="service-card card fade-in">
                     <div class="service-icon">
-                        <i class="fas fa-pills"></i>
+                        <i class="fas fa-pills" aria-hidden="true"></i>
                     </div>
                     <h3 class="service-title">Medication Management</h3>
                     <p class="service-description">Organization and administration of medications with proper documentation.</p>
@@ -1033,7 +1055,7 @@
                 
                 <div class="service-card card fade-in">
                     <div class="service-icon">
-                        <i class="fas fa-stethoscope"></i>
+                        <i class="fas fa-stethoscope" aria-hidden="true"></i>
                     </div>
                     <h3 class="service-title">Health Assessment</h3>
                     <p class="service-description">Comprehensive health evaluation with personalized recommendations.</p>
@@ -1058,7 +1080,7 @@
                 <div class="contact-info fade-in">
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-phone" aria-hidden="true"></i>
                         </div>
                         <div>
                             <h3>Phone</h3>
@@ -1069,7 +1091,7 @@
                     
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                         <div>
                             <h3>Email</h3>
@@ -1080,7 +1102,7 @@
                     
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         </div>
                         <div>
                             <h3>Service Area</h3>
@@ -1091,7 +1113,7 @@
                     
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
                         </div>
                         <div>
                             <h3>Business Hours</h3>
@@ -1104,7 +1126,7 @@
                 
                 <div class="contact-form fade-in">
                     <!-- Alert Messages -->
-                    <div id="formAlert" class="alert" style="display: none;"></div>
+                    <div id="formAlert" class="alert alert-hidden"></div>
                     
                     <form id="contactForm">
                         <div class="form-group">
@@ -1143,7 +1165,7 @@
                         
                         <button type="submit" class="btn btn-primary" id="submitBtn">
                             <span id="submitText">Request Consultation</span>
-                            <span id="submitSpinner" class="spinner" style="display: none;"></span>
+                            <span id="submitSpinner" class="spinner spinner-hidden"></span>
                         </button>
                     </form>
                 </div>
@@ -1159,10 +1181,18 @@
                     <h3>EliteCare Nursing</h3>
                     <p>Providing exceptional private nursing care with compassion, expertise, and dedication to improving patient outcomes.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
                 
@@ -1190,9 +1220,9 @@
                 <div class="footer-column">
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-phone"></i> +237 653584827</li>
-                        <li><i class="fas fa-envelope"></i> ginacare47@gmail.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Greater Metropolitan Area of Buea </li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> +237 653584827</li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> ginacare47@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Greater Metropolitan Area of Buea</li>
                     </ul>
                 </div>
             </div>
@@ -1213,16 +1243,19 @@
         
         mobileToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            mobileToggle.innerHTML = navMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
+            const isActive = navMenu.classList.contains('active');
+            mobileToggle.innerHTML = isActive 
+                ? '<i class="fas fa-times" aria-hidden="true"></i>' 
+                : '<i class="fas fa-bars" aria-hidden="true"></i>';
+            mobileToggle.setAttribute('aria-expanded', isActive);
         });
         
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
-                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                mobileToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+                mobileToggle.setAttribute('aria-expanded', 'false');
             });
         });
 
@@ -1340,7 +1373,7 @@
         function showAlert(message, type = 'info') {
             formAlert.textContent = message;
             formAlert.className = `alert alert-${type}`;
-            formAlert.style.display = 'block';
+            formAlert.classList.remove('alert-hidden');
             
             // Scroll to alert
             formAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1348,7 +1381,7 @@
             // Auto-hide success messages after 5 seconds
             if (type === 'success') {
                 setTimeout(() => {
-                    formAlert.style.display = 'none';
+                    formAlert.classList.add('alert-hidden');
                 }, 5000);
             }
         }
@@ -1358,11 +1391,11 @@
             if (loading) {
                 submitBtn.disabled = true;
                 submitText.style.display = 'none';
-                submitSpinner.style.display = 'inline-block';
+                submitSpinner.classList.remove('spinner-hidden');
             } else {
                 submitBtn.disabled = false;
                 submitText.style.display = 'inline-block';
-                submitSpinner.style.display = 'none';
+                submitSpinner.classList.add('spinner-hidden');
             }
         }
         
@@ -1445,6 +1478,9 @@
         // Add console log to confirm script is loaded
         console.log('Gina Elite Nursing Care website loaded successfully');
         console.log('Google Apps Script URL:', GOOGLE_APPS_SCRIPT_URL);
+
+        // Initialize alert as hidden
+        formAlert.classList.add('alert-hidden');
     </script>
 </body>
 </html>
